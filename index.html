@@ -167,7 +167,7 @@ function axBlock(n){var mine=AP.filter(function(a){return HOME[a[0]]===n}),more=
 var h='<div class="ax"><h2>Anhang zu diesem Kapitel</h2>';
 mine.forEach(function(a){h+='<div class="ap2"><h3>Anhang '+a[1]+': '+a[2]+'</h3>';
 if(a[0]==="b")h+='<div class="tw"><table><tr><th>Interessierte Partei</th><th>Erwartung</th><th>Konsequenz für das QMS</th></tr>'+TB.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'}).join('')+'</table></div>';
-else{var f='images/anhang-'+a[0]+'.jpg';h+='<a href="'+f+'" target="_blank" rel="noopener" title="In voller Größe öffnen"><img class="apimg" src="'+f+'" alt="Anhang '+a[1]+': '+a[2]+'" loading="lazy"></a>'}
+else{var f='anhang/anhang-'+a[0]+'.jpg';h+='<a href="'+f+'" target="_blank" rel="noopener" title="In voller Größe öffnen"><img class="apimg" src="'+f+'" alt="Anhang '+a[1]+': '+a[2]+'" loading="lazy"></a>'}
 h+='</div>'});
 if(more.length)h+='<p class="more">Siehe auch: '+more.map(function(a){return '<a href="#anhang-'+a[0]+'">Anhang '+a[1]+': '+a[2]+'</a>'}).join(', ')+'</p>';
 return h+'</div>'}
@@ -175,7 +175,7 @@ function anhang(){var h='<section class="page" id="pg-anhang"><span class="ph">N
 AP.forEach(function(a){var ks=a[3].split(' und ').map(function(n){return '<a href="#kap'+n+'">Kapitel '+n+'</a>'}).join(' und ');
 h+='<div class="app" id="app-'+a[0]+'"><h2>Anhang '+a[1]+': '+a[2]+'</h2><p class="k">Gehört zu '+ks+'</p>';
 if(a[0]==="b")h+='<div class="tw"><table><tr><th>Interessierte Partei</th><th>Erwartung</th><th>Konsequenz für das QMS</th></tr>'+TB.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'}).join('')+'</table></div>';
-else{var f='images/anhang-'+a[0]+'.jpg';h+='<img class="apimg" src="'+f+'" alt="Anhang '+a[1]+': '+a[2]+'" loading="lazy"><a class="zoom" href="'+f+'" target="_blank" rel="noopener">Bild in voller Größe öffnen</a>'}
+else{var f='anhang/anhang-'+a[0]+'.jpg';h+='<img class="apimg" src="'+f+'" alt="Anhang '+a[1]+': '+a[2]+'" loading="lazy"><a class="zoom" href="'+f+'" target="_blank" rel="noopener">Bild in voller Größe öffnen</a>'}
 h+='</div>'});return h+'<div class="pn"><a href="#kap10">‹ Kapitel 10: Verbesserung</a><a href="#start">Zur Startseite ›</a></div></section>'}
 function showApp(k){document.querySelectorAll(".app").forEach(function(e){e.classList.toggle("on",e.id==="app-"+k)});document.querySelectorAll(".atabs a").forEach(function(a){if(a.dataset.a===k)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
 $("main").innerHTML=home()+P.map(chap).join('')+anhang();nav();
