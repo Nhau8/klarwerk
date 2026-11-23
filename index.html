@@ -70,6 +70,7 @@ h2.s{font-size:28px;margin-top:56px;letter-spacing:-.02em}
 .cta{display:inline-block;margin-top:26px;background:var(--pri);color:var(--pri-t);padding:12px 22px;border-radius:4px;font-weight:500;text-decoration:none}
 .cta:hover{filter:brightness(1.1)}
 .note{font-size:14px;color:var(--mut);margin-top:40px;max-width:70ch}
+figure.pic{margin:32px 0 0}figure.pic img{display:block;width:100%;max-height:340px;object-fit:cover;border-radius:6px;background:var(--soft)}
 </style>
 </head>
 <body>
@@ -140,15 +141,17 @@ it:[["Allgemeines (10.1)","Prüf-, Wartungs- und Schulungsmaßnahmen werden gezi
 ev:["Abweichungs- und Sperrprotokoll (Anhang F)","Jahresauswertung und Warngrenzen (Anhang G)"],
 res:"Ergebnis: 5,0 % auf 1,6 % in zwölf Monaten. Das Ziel von unter 2 % ist erreicht."}];
 var $=function(x){return document.getElementById(x)};
+var ALT={start:"Solarmodule in der Fertigung",kap4:"Team bespricht Prozesse am Whiteboard",kap5:"Geschäftsführung in einer Besprechung",kap6:"Risikoanalyse am Konferenztisch",kap7:"Schulung in der Produktionshalle",kap8:"Fertigungslinie für Photovoltaikmodule",kap9:"Prüfstand für Solarmodule",kap10:"Solarpark im Sonnenlicht"};
+function img(id){return '<figure class="pic"><img src="images/'+id+'.jpg" alt="'+ALT[id]+'" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></figure>'}
 function gauge(){return '<div class="gauge" id="g"><h2>Ausschussquote bei GreenTech Solar</h2><div class="row"><span>Vorher</span><div class="track"><div class="fill f1">5,0 %</div></div></div><div class="row"><span>Nach 12 Monaten</span><div class="track"><div class="fill f2">1,6 %</div><div class="tl"></div></div></div><p class="tlt">Gestrichelte Linie: Ziel unter 2 %</p><p class="sub">Beispielhafte Jahresauswertung aus dem Referenzprojekt.</p></div>'}
 function nav(){var h='<a href="#start">Start<i>Überblick</i></a>';P.forEach(function(p){h+='<a href="#'+p.id+'">'+p.n+' '+p.s+'<i>'+p.ph+'</i></a>'});$("nav").innerHTML=h}
-function home(){var h='<section class="page" id="pg-start"><span class="ph">Fiktives Beratungsunternehmen</span><h1>Weniger Ausschuss durch klare Prozesse.</h1><p class="lead">Klarwerk führt die DIN EN ISO 9001:2015 in Produktionsunternehmen ein, Schritt für Schritt nach dem PDCA-Zyklus. So sehen Sie an einem echten Fallbeispiel, wie das aussieht.</p>'+gauge()+
+function home(){var h='<section class="page" id="pg-start"><span class="ph">Fiktives Beratungsunternehmen</span><h1>Weniger Ausschuss durch klare Prozesse.</h1><p class="lead">Klarwerk führt die DIN EN ISO 9001:2015 in Produktionsunternehmen ein, Schritt für Schritt nach dem PDCA-Zyklus. So sehen Sie an einem echten Fallbeispiel, wie das aussieht.</p>'+img('start')+gauge()+
 '<h2 class="s">Unser Vorgehen</h2><p class="lead" style="margin-top:8px">Jede Phase hat eigene Seiten. Sie zeigen, was wir bei GreenTech Solar umgesetzt haben.</p><div class="pdca">'+
 [["Plan","Kapitel 4 bis 7","Kontext, Führung, Risiken und Ziele, Ressourcen","kap4"],["Do","Kapitel 8","Entwicklung, Beschaffung, Produktion, Freigabe","kap8"],["Check","Kapitel 9","Überwachung, Audits, Management-Bewertung","kap9"],["Act","Kapitel 10","Korrekturmaßnahmen und ständige Verbesserung","kap10"]].map(function(x){return '<a href="#'+x[3]+'"><h3>'+x[0]+'</h3><p><b>'+x[1]+'</b><br>'+x[2]+'</p></a>'}).join('')+'</div>'+
 '<h2 class="s">Referenzprojekt: GreenTech Solar GmbH</h2><p class="lead" style="margin-top:8px">Ein Hersteller von Photovoltaikmodulen für private und gewerbliche Anwendungen. Hauptursache des Ausschusses waren Fehler bei der Siliziumkristallisation, bei der Laminierung und bei der Elektronikeinbindung.</p><ul class="facts"><li><strong>100</strong>Mitarbeiter</li><li><strong>F&amp;E, Produktion, QM</strong>drei Hauptbereiche</li><li><strong>5,0 % auf 1,6 %</strong>Ausschussquote</li></ul>'+
 '<h2 class="s">Gespräch vereinbaren</h2><p class="lead" style="margin-top:8px">Wir schauen gemeinsam auf Ihre Ausschussquote und Ihre Schnittstellen.</p><a class="cta" href="mailto:kontakt@klarwerk-beratung.example">Erstgespräch anfragen</a><p class="note">Klarwerk Qualitätsberatung ist ein fiktives Unternehmen. Die Inhalte beruhen auf dem Fallbeispiel GreenTech Solar GmbH.</p></section>';return h}
 function chap(p,i){var pr=i>0?P[i-1]:null,nx=i<P.length-1?P[i+1]:null;
-var h='<section class="page" id="pg-'+p.id+'"><span class="ph">'+p.ph+' · Kapitel '+p.n+'</span><h1>'+p.t+'</h1><p class="lead">'+p.lead+'</p>';
+var h='<section class="page" id="pg-'+p.id+'"><span class="ph">'+p.ph+' · Kapitel '+p.n+'</span><h1>'+p.t+'</h1><p class="lead">'+p.lead+'</p>'+img(p.id);
 if(p.gauge)h+=gauge();
 if(p.flow)h+='<div class="flow">'+p.flow.map(function(f,k){return (k?'<span aria-hidden="true">›</span>':'')+'<b>'+f+'</b>'}).join('')+'</div>';
 h+='<div class="grid"><div>'+p.it.map(function(x){return '<div class="item"><h3>'+x[0]+'</h3><p>'+x[1]+'</p></div>'}).join('')+'</div><aside><h2>Was Auditoren sehen</h2><ul>'+p.ev.map(function(e){return '<li>'+e+'</li>'}).join('')+'</ul></aside></div><div class="res">'+p.res+'</div>';
