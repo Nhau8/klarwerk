@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Klarwerk Qualitätsberatung – ISO 9001 für die Produktion</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#edf1f2;--surf:#fff;--ink:#12262b;--mut:#54666b;--line:#c9d3d6;--pri:#0e5a52;--pri-t:#fff;--acc:#e9a21b;--soft:#dbe8e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e191c;--surf:#16262a;--ink:#e6eeee;--mut:#9db0b3;--line:#2c4247;--pri:#5cc2b3;--pri-t:#08201d;--soft:#1d3a38;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e191c;--surf:#16262a;--ink:#e6eeee;--mut:#9db0b3;--line:#2c4247;--pri:#5cc2b3;--pri-t:#08201d;--soft:#1d3a38;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--surf);border-bottom:1px solid var(--line);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:10}
+.bar{max-width:1080px;margin:auto;padding:12px 20px 0;display:flex;align-items:baseline;gap:16px;justify-content:space-between}
+.brand{font:800 22px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.brand span{color:var(--pri)}
+.bar small{color:var(--mut);font-size:14px}
+nav{max-width:1080px;margin:auto;padding:0 12px;display:flex;overflow-x:auto;gap:2px}
+nav a{flex:none;padding:10px 12px 11px;text-decoration:none;font-size:15px;font-weight:500;color:var(--mut);border-bottom:3px solid transparent;white-space:nowrap}
+nav a i{display:block;font-style:normal;font-size:12px;color:var(--mut);opacity:.85}
+nav a[aria-current=page]{color:var(--ink);border-color:var(--pri)}
+nav a:hover{color:var(--ink)}
+main{max-width:1080px;margin:auto;padding:40px 20px 64px}
+.page{display:none}.page.on{display:block}
+h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.03em;max-width:17ch}
+.lead{font-size:20px;max-width:60ch;margin:20px 0 0;color:var(--mut)}
+.ph{display:inline-block;background:var(--soft);color:var(--pri);font-weight:500;font-size:14px;padding:3px 10px;border-radius:99px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:48px;margin-top:44px}
+@media(max-width:820px){.grid{grid-template-columns:1fr;gap:32px}}
+.item{border-left:3px solid var(--line);padding:2px 0 2px 18px;margin-bottom:26px}
+.item h3{font-size:20px;margin-bottom:6px}
+.item p{margin:0;max-width:62ch}
+aside{background:var(--surf);border:1px solid var(--line);border-radius:6px;padding:20px 22px;align-self:start}
+aside h2{font-size:19px;margin-bottom:10px}
+aside ul{margin:0;padding-left:20px}aside li{margin:6px 0}
+.res{margin-top:36px;background:var(--pri);color:var(--pri-t);padding:18px 22px;border-radius:6px;font-weight:500}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 4px}
+.flow b{background:var(--soft);padding:6px 12px;border-radius:4px;font-weight:500;font-size:15px}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:48px;padding-top:20px;border-top:1px solid var(--line)}
+.pn a{font-weight:500;text-decoration:none;color:var(--pri);padding:6px 0}
+.pn a:hover{text-decoration:underline}
+/* start */
+.gauge{margin-top:40px;background:var(--surf);border:1px solid var(--line);border-radius:6px;padding:24px;max-width:760px}
+.gauge h2{font-size:18px;margin-bottom:18px}
+.row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:center;margin:12px 0;font-size:15px}
+.track{position:relative;height:44px;background:var(--bg);border-radius:3px}
+.fill{height:100%;border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font:800 20px "Bricolage Grotesque",sans-serif;transition:width 1s ease}
+.f1{background:var(--acc);color:#1b1300;width:0}.f2{background:var(--pri);color:var(--pri-t);width:0}
+.go .f1{width:100%}.go .f2{width:32%}
+.tl{position:absolute;top:-6px;bottom:-6px;left:40%;border-left:2px dashed var(--ink)}
+.tlt{font-size:13px;color:var(--mut);margin:6px 0 0 calc(90px + 12px)}
+.sub{font-size:13px;color:var(--mut);margin:14px 0 0}
+@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+.pdca{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+@media(max-width:820px){.pdca{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.pdca{grid-template-columns:1fr}}
+.pdca a{background:var(--surf);border:1px solid var(--line);border-top:4px solid var(--pri);padding:16px;text-decoration:none;border-radius:4px}
+.pdca a:hover{border-top-color:var(--acc)}
+.pdca h3{font-size:22px}.pdca p{margin:6px 0 0;font-size:15px;color:var(--mut)}
+h2.s{font-size:28px;margin-top:56px;letter-spacing:-.02em}
+.facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{font-size:15px;color:var(--mut)}.facts strong{display:block;color:var(--ink);font:700 24px "Bricolage Grotesque",sans-serif}
+.cta{display:inline-block;margin-top:26px;background:var(--pri);color:var(--pri-t);padding:12px 22px;border-radius:4px;font-weight:500;text-decoration:none}
+.cta:hover{filter:brightness(1.1)}
+.note{font-size:14px;color:var(--mut);margin-top:40px;max-width:70ch}
+</style>
+</head>
+<body>
+<header>
+<div class="bar"><a class="brand" href="#start">Klar<span>werk</span></a><small>Qualitätsberatung nach DIN EN ISO 9001</small></div>
+<nav id="nav" aria-label="Seiten"></nav>
+</header>
+<main id="main"></main>
+<script>
+var P=[
+{id:"kap4",n:4,ph:"Plan",t:"Kontext der Organisation",s:"Kontext",
+lead:"Bevor etwas geändert wird, klären wir, wo die GreenTech Solar GmbH steht: mit welchen Einflüssen, Erwartungen und Abläufen sie es zu tun hat.",
+flow:["F&E: Fertigungsvorgaben","Produktion: meldet Abweichungen","QM: legt mit F&E Korrekturmaßnahmen fest","QM: prüft Wirksamkeit"],
+it:[["Interne und externe Einflüsse","Eine SWOT-Analyse zeigt die Lage. Extern: Wettbewerbsdruck, gesetzliche Anforderungen, Rohstoffqualität der Lieferanten. Intern: Ausschussquote von 5 % und unklare Abteilungsschnittstellen."],
+["Interessierte Parteien","Kunden, Geschäftsführung, Mitarbeiter und Lieferanten erwarten hochwertige Module, geringe Ausschussquoten, klare Arbeitsanweisungen und verbindliche Qualitätsvorgaben."],
+["Anwendungsbereich","Das Managementsystem umfasst Entwicklung, Produktion und Vertrieb von Photovoltaikmodulen. Alle Normanforderungen werden berücksichtigt."],
+["Prozesse und Schnittstellen","Führungs-, Kern- und Unterstützungsprozesse stehen in einer Prozesslandkarte. Der Ablauf oben legt fest, wer wem was meldet, und beseitigt damit die unklaren Schnittstellen."]],
+ev:["SWOT-Analyse (Anhang A)","Liste der interessierten Parteien (Anhang B)","Prozesslandkarte (Anhang C)"],
+res:"Ergebnis: Zuständigkeiten und Schnittstellen zwischen F&E, Produktion und QM sind eindeutig geregelt."},
+{id:"kap5",n:5,ph:"Plan",t:"Führung",s:"Führung",
+lead:"Qualität beginnt in der Geschäftsführung. Bei GreenTech haben wir Verantwortung, Politik und Rollen so festgelegt, dass das Ausschussziel von jeder Ebene getragen wird.",
+it:[["Verpflichtung (5.1)","Die Geschäftsführung leitet das Management-Review selbst, stellt Budget für Wartung, Kalibrierung und Schulung bereit und verfolgt das Ziel, die Ausschussquote von rund 5 % auf unter 2 % zu senken. Hauptursache ist die Siliziumkristallisation."],
+["Kundenorientierung (5.1.2)","Der Vertrieb erfasst Leistung, Wirkungsgrad, Lebensdauer und Garantie. F&E und QM prüfen die Machbarkeit, auch nach IEC 61215 und 61730. Risiken wie frühe Degradation oder defekte Steuerelektronik werden bewertet. Reklamationen und Termintreue werden monatlich ausgewertet."],
+["Qualitätspolitik (5.2)","Sie verpflichtet das Unternehmen zu langlebigen, effizienten Modulen, weniger Ausschuss und ständiger Verbesserung. Bekannt gemacht wird sie per Aushang, Intranet und Teamgespräch."],
+["Rollen und Befugnisse (5.3)","Geschäftsführung, QM-Beauftragte/r, Leitungen von F&E, Produktion und QM sowie Prozessverantwortliche haben klare Aufgaben. Mitarbeiter dürfen die Anlage bei Abweichungen stoppen."]],
+ev:["Review-Protokolle","Zielübersicht Ausschussquote","Budgetplan","Aushang der Qualitätspolitik","Organigramm"],
+res:"Ergebnis: Das Ziel „unter 2 %“ ist von der Führung beschlossen, mit Budget hinterlegt und in allen Bereichen bekannt."},
+{id:"kap6",n:6,ph:"Plan",t:"Planung",s:"Planung",
+lead:"Wir benennen, wo Fehler entstehen können, setzen ein messbares Ziel und regeln, wie Änderungen kontrolliert werden.",
+it:[["Risiken und Chancen","Die größten Qualitätsrisiken liegen bei der Siliziumkristallisation, der Laminierung und der elektronischen Montage. Gezielte Prozesskontrollen, Mitarbeiterschulungen und die Prüfung von Lieferantenzeugnissen sollen Fehler reduzieren und Ressourcen sparen."],
+["Qualitätsziele","Hauptziel: Ausschussquote von 5 % auf unter 2 % innerhalb von zwölf Monaten. Zusätzlich sinken Produktionsabweichungen und Kundenreklamationen. Die Zielerreichung wird monatlich anhand festgelegter Kennzahlen geprüft."],
+["Planung von Änderungen","Änderungen an Maschinen, Materialien und Fertigungsabläufen werden vor der Umsetzung von Produktion, F&E und QM auf Qualitätsrisiken bewertet, dokumentiert und freigegeben."]],
+ev:["Risikoanalyse (Anhang D)","Qualitätszielübersicht (Anhang E)"],
+res:"Ergebnis: Ein klares Zwölf-Monats-Ziel mit monatlicher Kennzahl und ein fester Weg für jede Änderung."},
+{id:"kap7",n:7,ph:"Plan",t:"Unterstützung",s:"Unterstützung",
+lead:"Menschen, Anlagen, Wissen und Dokumente: Wir stellen sicher, dass GreenTech alles hat, was das System im Alltag trägt.",
+it:[["Ressourcen (7.1)","Qualifiziertes Personal sowie Kristallisationsanlagen, Laminatoren, Elektronikmontage und Prüfstände. Temperatur, Sauberkeit und ESD-Schutz werden überwacht. Messmittel wie Sensoren, Siliziummessgeräte und der Sonnensimulator stehen im Kalibrierplan und sind auf nationale Normale rückführbar."],
+["Kompetenz (7.2)","Eine Qualifizierungsmatrix legt fest, was jeder Arbeitsplatz verlangt. Neue Mitarbeiter arbeiten erst nach dokumentierter Einweisung selbstständig."],
+["Bewusstsein (7.3)","Alle kennen Politik und Ziel (unter 2 % Ausschuss), ihren eigenen Beitrag und die Folgen von Abweichungen."],
+["Kommunikation (7.4)","Tägliche Kurzbesprechung mit Ausschusskennzahlen, monatlicher Qualitätsbericht, jährliche Mitarbeiterinformation durch die Geschäftsführung."],
+["Dokumentierte Information (7.5)","Dokumente tragen Titel, Nummer, Version und Datum, werden vor Herausgabe freigegeben, liegen am Arbeitsplatz bereit und werden bei Änderungen gelenkt. Aufzeichnungen sind geschützt und werden fristgerecht aufbewahrt."]],
+ev:["Kalibrierplan","Qualifizierungsmatrix","Schulungsnachweise","Kalibrierzertifikate"],
+res:"Ergebnis: Messmittel, Qualifikation und Dokumente sind nachweisbar im Griff."},
+{id:"kap8",n:8,ph:"Do",t:"Betrieb",s:"Betrieb",
+lead:"Hier wird der Plan zur Praxis. Von der Auftragsprüfung bis zum Kundendienst steuern Prüfpläne und Annahmekriterien die Produktion, besonders dort, wo das Silizium verarbeitet wird.",
+it:[["Anforderungen und Entwicklung (8.2, 8.3)","Kundenanforderungen und Normen (IEC 61215, IEC 61730, CE) werden vor der Auftragsannahme geprüft. F&E entwickelt in fünf Phasen mit Review, Verifizierung und Validierung."],
+["Beschaffung (8.4)","Lieferanten werden in A, B und C eingestuft. Silizium und Steuerelektronik werden im Wareneingang verstärkt geprüft, damit Fehler gar nicht erst entstehen."],
+["Produktion (8.5)","Kristallisation und Laminierung sind validierte Prozesse mit SPC-Überwachung. Jedes Modul ist über die Seriennummer rückverfolgbar. Änderungen werden nach Kapitel 6 bewertet."],
+["Freigabe (8.6)","Module gehen erst nach bestandener Endprüfung (Kennlinie, Isolation, Sichtprüfung) durch befugte Prüfer an den Kunden."],
+["Nichtkonforme Ergebnisse (8.7)","Fehlerhafte Module werden gesperrt und bewertet. Ausschuss wird nach Fehlerklassen erfasst und monatlich ausgewertet."]],
+ev:["Formblätter und Prüfpläne (Anhang F)","Lieferantenbewertung A/B/C","Seriennummern-Rückverfolgung"],
+res:"Ergebnis: Fehler werden am Wareneingang und im validierten Prozess abgefangen statt erst in der Endprüfung."},
+{id:"kap9",n:9,ph:"Check",t:"Bewertung der Leistung",s:"Bewertung",
+lead:"Ob die Maßnahmen wirken, zeigen Zahlen. Wir richten Messung, Audit und Management-Bewertung so ein, dass Abweichungen früh auffallen.",
+it:[["Überwachung und Messung","Die Ausschussquote wird monatlich ausgewertet. Kristallisation, Laminierung und Endprüfung werden chargenbezogen kontrolliert. Dazu kommen Kundenreklamationen, Maschinenausfälle und Lieferantenqualität."],
+["Kundenzufriedenheit","Reklamationen, Garantiefälle und Liefertermintreue werden regelmäßig bewertet. Auffälligkeiten untersucht das QM und leitet bei Bedarf Korrekturmaßnahmen ein."],
+["Internes Audit","Das QM auditiert jährlich die Einhaltung der DIN EN ISO 9001:2015 und der Arbeitsabläufe. Auditoren prüfen unabhängig von ihrem eigenen Verantwortungsbereich. Abweichungen werden dokumentiert, die Korrekturen nachverfolgt."],
+["Managementbewertung","Die Geschäftsführung bewertet jährlich die Wirksamkeit auf Basis von Ausschussquote, Zielen, Auditergebnissen, Kundenzufriedenheit sowie Risiken und Chancen. Bei Zielabweichung beschließt sie Maßnahmen und Ressourcen."]],
+ev:["Beispielhafte Qualitätsüberwachung, internes Audit und Managementbewertung (Anhang H)"],
+res:"Ergebnis: Die Ergebnisse der Bewertung fließen direkt in Kapitel 10 ein."},
+{id:"kap10",n:10,ph:"Act",t:"Verbesserung",s:"Verbesserung",
+lead:"Aus Messwerten werden Maßnahmen. Bei GreenTech sank die Ausschussquote im beispielhaften Jahresverlauf von 5,0 % auf 1,6 %. Warngrenzen sichern den Erfolg danach.",
+gauge:1,
+it:[["Allgemeines (10.1)","Prüf-, Wartungs- und Schulungsmaßnahmen werden gezielt genutzt, um Produktqualität zu steigern und die Ausschussquote dauerhaft zu senken."],
+["Nichtkonformitäten und Korrekturmaßnahmen (10.2)","Betroffene Module werden gesperrt, QM, Produktion und F&E untersuchen die Ursache. Korrekturmaßnahmen werden festgelegt, umgesetzt, auf Wirksamkeit geprüft und im Abweichungs- und Sperrprotokoll festgehalten."],
+["Fortlaufende Verbesserung (10.3)","Prüfungen, Audits und Management-Bewertungen werden regelmäßig ausgewertet. Die Wirksamkeit zeigt sich an der monatlichen Ausschussquote."],
+["Warngrenzen nach dem Projekt","Ab 2,0 % werden die Ursachen geprüft. Ab 3,0 % werden unverzüglich Korrekturmaßnahmen eingeleitet."]],
+ev:["Abweichungs- und Sperrprotokoll (Anhang F)","Jahresauswertung und Warngrenzen (Anhang G)"],
+res:"Ergebnis: 5,0 % auf 1,6 % in zwölf Monaten. Das Ziel von unter 2 % ist erreicht."}];
+var $=function(x){return document.getElementById(x)};
+function gauge(){return '<div class="gauge" id="g"><h2>Ausschussquote bei GreenTech Solar</h2><div class="row"><span>Vorher</span><div class="track"><div class="fill f1">5,0 %</div></div></div><div class="row"><span>Nach 12 Monaten</span><div class="track"><div class="fill f2">1,6 %</div><div class="tl"></div></div></div><p class="tlt">Gestrichelte Linie: Ziel unter 2 %</p><p class="sub">Beispielhafte Jahresauswertung aus dem Referenzprojekt.</p></div>'}
+function nav(){var h='<a href="#start">Start<i>Überblick</i></a>';P.forEach(function(p){h+='<a href="#'+p.id+'">'+p.n+' '+p.s+'<i>'+p.ph+'</i></a>'});$("nav").innerHTML=h}
+function home(){var h='<section class="page" id="pg-start"><span class="ph">Fiktives Beratungsunternehmen</span><h1>Weniger Ausschuss durch klare Prozesse.</h1><p class="lead">Klarwerk führt die DIN EN ISO 9001:2015 in Produktionsunternehmen ein, Schritt für Schritt nach dem PDCA-Zyklus. So sehen Sie an einem echten Fallbeispiel, wie das aussieht.</p>'+gauge()+
+'<h2 class="s">Unser Vorgehen</h2><p class="lead" style="margin-top:8px">Jede Phase hat eigene Seiten. Sie zeigen, was wir bei GreenTech Solar umgesetzt haben.</p><div class="pdca">'+
+[["Plan","Kapitel 4 bis 7","Kontext, Führung, Risiken und Ziele, Ressourcen","kap4"],["Do","Kapitel 8","Entwicklung, Beschaffung, Produktion, Freigabe","kap8"],["Check","Kapitel 9","Überwachung, Audits, Management-Bewertung","kap9"],["Act","Kapitel 10","Korrekturmaßnahmen und ständige Verbesserung","kap10"]].map(function(x){return '<a href="#'+x[3]+'"><h3>'+x[0]+'</h3><p><b>'+x[1]+'</b><br>'+x[2]+'</p></a>'}).join('')+'</div>'+
+'<h2 class="s">Referenzprojekt: GreenTech Solar GmbH</h2><p class="lead" style="margin-top:8px">Ein Hersteller von Photovoltaikmodulen für private und gewerbliche Anwendungen. Hauptursache des Ausschusses waren Fehler bei der Siliziumkristallisation, bei der Laminierung und bei der Elektronikeinbindung.</p><ul class="facts"><li><strong>100</strong>Mitarbeiter</li><li><strong>F&amp;E, Produktion, QM</strong>drei Hauptbereiche</li><li><strong>5,0 % auf 1,6 %</strong>Ausschussquote</li></ul>'+
+'<h2 class="s">Gespräch vereinbaren</h2><p class="lead" style="margin-top:8px">Wir schauen gemeinsam auf Ihre Ausschussquote und Ihre Schnittstellen.</p><a class="cta" href="mailto:kontakt@klarwerk-beratung.example">Erstgespräch anfragen</a><p class="note">Klarwerk Qualitätsberatung ist ein fiktives Unternehmen. Die Inhalte beruhen auf dem Fallbeispiel GreenTech Solar GmbH.</p></section>';return h}
+function chap(p,i){var pr=i>0?P[i-1]:null,nx=i<P.length-1?P[i+1]:null;
+var h='<section class="page" id="pg-'+p.id+'"><span class="ph">'+p.ph+' · Kapitel '+p.n+'</span><h1>'+p.t+'</h1><p class="lead">'+p.lead+'</p>';
+if(p.gauge)h+=gauge();
+if(p.flow)h+='<div class="flow">'+p.flow.map(function(f,k){return (k?'<span aria-hidden="true">›</span>':'')+'<b>'+f+'</b>'}).join('')+'</div>';
+h+='<div class="grid"><div>'+p.it.map(function(x){return '<div class="item"><h3>'+x[0]+'</h3><p>'+x[1]+'</p></div>'}).join('')+'</div><aside><h2>Was Auditoren sehen</h2><ul>'+p.ev.map(function(e){return '<li>'+e+'</li>'}).join('')+'</ul></aside></div><div class="res">'+p.res+'</div>';
+h+='<div class="pn"><a href="#'+(pr?pr.id:'start')+'">‹ '+(pr?'Kapitel '+pr.n+': '+pr.s:'Start')+'</a>'+(nx?'<a href="#'+nx.id+'">Kapitel '+nx.n+': '+nx.s+' ›</a>':'<a href="#start">Zur Startseite ›</a>')+'</div></section>';return h}
+$("main").innerHTML=home()+P.map(chap).join('');nav();
+function route(){var id=(location.hash||'#start').slice(1);if(!$("pg-"+id))id="start";
+document.querySelectorAll(".page").forEach(function(e){e.classList.toggle("on",e.id==="pg-"+id)});
+document.querySelectorAll("nav a").forEach(function(a){var on=a.getAttribute("href")==="#"+id;if(on){a.setAttribute("aria-current","page");a.scrollIntoView({inline:"center",block:"nearest"})}else a.removeAttribute("aria-current")});
+var g=document.querySelector("#pg-"+id+" .gauge");document.querySelectorAll(".gauge").forEach(function(e){e.classList.remove("go")});
+if(g)setTimeout(function(){g.classList.add("go")},60);
+window.scrollTo(0,0);document.title=(id==="start"?"":P.filter(function(p){return p.id===id})[0].t+" – ")+"Klarwerk Qualitätsberatung"}
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
